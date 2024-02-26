@@ -1,3 +1,7 @@
+#include <iostream>
+#include <algorithm> // max 함수 사용을 위해 포함
+using namespace std;
+
 int map[100][100];
 long long dp[100][100];
 int n;
