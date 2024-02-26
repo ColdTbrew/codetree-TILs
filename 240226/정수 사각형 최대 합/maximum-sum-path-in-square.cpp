@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int map[100][100];
-int dp[100][100];
+long long dp[100][100];
 int n;
 void solve(){
     dp[1][1] = map[1][1];
