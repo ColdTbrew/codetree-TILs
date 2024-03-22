@@ -30,7 +30,7 @@ int main() {
             char x;
             cin >> x;
             l.insert(it, x);
-            it++
+            it++;
         }
     }
     for(it = l.begin(); it != l.end(); it++) {
