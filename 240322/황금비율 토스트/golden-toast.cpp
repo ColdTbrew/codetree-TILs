@@ -35,6 +35,6 @@ int main() {
     for(it = l.begin(); it != l.end(); it++) {
         cout << *it;      
     }   
-
+    cout <<"\n";
     return 0;
 }
