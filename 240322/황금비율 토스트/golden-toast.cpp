@@ -17,20 +17,19 @@ int main() {
     while(m--){
         char input;
         cin >> input;
-        if(input =='L'){
+        if(input =='L'&& it != l.begin()){
             it--;
         }
-        if(input =='R'){
+        if(input =='R'&& it != l.end()){
             it++;
         }
-        if(input =='D'){
+        if(input =='D'&& it != l.end()){
             l.erase(it);
         }
         if(input =='P'){
             char x;
             cin >> x;
             l.insert(it, x);
-            it++;
         }
     }
     for(it = l.begin(); it != l.end(); it++) {
