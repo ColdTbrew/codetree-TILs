@@ -24,7 +24,7 @@ int main() {
             it++;
         }
         if(input =='D'&& it != l.end()){
-            l.erase(it);
+            it = l.erase(it);
         }
         if(input =='P'){
             char x;
@@ -32,9 +32,9 @@ int main() {
             l.insert(it, x);
         }
     }
-    for(it = l.begin(); it != l.end(); it++) {
-        cout << *it;      
-    }   
+    for(auto elem : l) {
+        cout << elem;
+    }
     cout <<"\n";
     return 0;
 }
