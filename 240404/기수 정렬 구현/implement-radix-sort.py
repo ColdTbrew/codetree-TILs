@@ -6,7 +6,7 @@ def radix_sort(nums):
     while max_num >= 10**digit:
         buckets =[deque() for _ in range(10)]
         for num in nums:
-            digit_value = num //(10**digit)
+            digit_value = (num //(10**digit)) % 10
             buckets[digit_value].append(num)
         new_nums = []
         for bucket in buckets:
