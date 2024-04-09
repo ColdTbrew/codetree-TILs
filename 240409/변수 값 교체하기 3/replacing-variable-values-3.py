@@ -1,4 +1,4 @@
 a = 3
-b = 6
+b = 5
 a, b = b, a
 print(f"{a} {b}")
