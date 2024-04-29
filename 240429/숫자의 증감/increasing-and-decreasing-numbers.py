@@ -7,7 +7,7 @@ if mode == 'A':
         print(num, end= ' ')
         num +=1
 else:
-    num = 1
+    num = rap
     for i in range(rap):
         print(num, end= ' ')
         num -=1
