@@ -4,15 +4,8 @@ a = [[0]* (n+1)]
 for _ in range(n):
     a.append([0] + list(map(int, input().split())))
 
-x1,y1 = map(int, input().split())
-x2,y2 = map(int, input().split())
-x3,y3 = map(int, input().split())
-
-count = [[0] * (n + 1)] * (n + 1)
-new_count = [[0] * (n + 1)] * (n + 1)
-
-
-
+count = [[0 for _ in range(n + 1)] for _ in range(n + 1)] 
+next_count = [[0 for _ in range(n + 1)] for _ in range(n + 1)] 
 
 
 def in_range(x, y):
