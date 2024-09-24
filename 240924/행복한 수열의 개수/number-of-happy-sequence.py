@@ -1,38 +1,44 @@
-n, m = map(int, input().split())
+size, continuous_count = map(int, input().split())
 matrix = []
 
-for i in range(n):
+for i in range(size):
     row = list(map(int, input().split()))
     matrix.append(row)
 
+total_happy = 0
 
+# 가로 방향 체크
+for i in range(size):
+    max_consecutive = 1  # 연속 카운트
+    current_count = 1  # 현재 연속된 원소 개수
+    
+    for j in range(1, size):
+        if matrix[i][j] == matrix[i][j - 1]:
+            current_count += 1
+        else:
+            current_count = 1
+        
+        if current_count > max_consecutive:
+            max_consecutive = current_count
+    
+    if max_consecutive >= continuous_count:
+        total_happy += 1
 
-def check_hori(i, m):
-    same = 0
-    represent = matrix[i][0]
-    for j in range(n):
-        if represent == matrix[i][j]:
-            same += 1
-    if same >= m:
-        return True
-    else:
-        return False
-def check_verti(j, m):
-    same = 0
-    represent = matrix[0][j]
-    for i in range(n):
-        if represent == matrix[i][j]:
-            same += 1
-    if same >= m:
-        return True
-    else:
-        return False
+# 세로 방향 체크
+for j in range(size):
+    max_consecutive = 1
+    current_count = 1
+    
+    for i in range(1, size):
+        if matrix[i][j] == matrix[i - 1][j]:
+            current_count += 1
+        else:
+            current_count = 1
+        
+        if current_count > max_consecutive:
+            max_consecutive = current_count
+    
+    if max_consecutive >= continuous_count:
+        total_happy += 1
 
-happy_count = 0
-for i in range(n):
-    if check_hori(i,m):
-        happy_count += 1
-    if check_verti(i,m):
-        happy_count += 1
-
-print(happy_count)
+print(total_happy)
