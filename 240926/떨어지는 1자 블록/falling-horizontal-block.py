@@ -13,22 +13,23 @@ block = [1]*m
 start_x, start_y = 0, k-1
 cur_x = 0
 cur_y = 0
-able = False
+
 
 for dx in range(n):
 #스타트 포지션 부터 블락의 길이만큼 열방향으로 탐색해서 모두0이면 dx를 다음으로 넘어가고
 # 1이 하나라도 나오면 0행에 넣기
-    count = 0
+    able = True
     for dy in range(len(block)):
         cur_x = dx
         cur_y = start_y + dy
         #print(cur_x, cur_y)
-        if mat[cur_x][cur_y] == 0:
-            count += 1
-        else:
-            count = 0
-    if count == len(block):
-        dest_x += 1
+        if mat[cur_x][cur_y] == 1:
+            able = False
+            break
+    if able:
+        dest_x = cur_x
+    else:
+        break
 
 
 
