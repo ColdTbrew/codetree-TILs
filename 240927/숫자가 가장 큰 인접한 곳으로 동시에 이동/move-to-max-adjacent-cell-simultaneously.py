@@ -31,10 +31,6 @@ def move(i, j):
                 max_value = cell_value
                 best_x, best_y = newx, newy
                 best_d = d
-            elif cell_value == max_value:
-                if best_d is None or d < best_d:
-                    best_x, best_y = newx, newy
-                    best_d = d
     next_marvels[best_x][best_y] += 1
 
 def handle_collisions():
