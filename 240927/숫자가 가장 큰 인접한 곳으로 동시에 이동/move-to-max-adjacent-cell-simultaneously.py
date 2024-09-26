@@ -20,9 +20,8 @@ dxs = [-1, 1, 0, 0]
 dys = [0, 0, -1, 1]
 
 def move(i, j):
-    max_value = mat[i][j]
+    max_value = 0
     best_x, best_y = i, j
-    best_d = None
     for d in range(4):
         newx = i + dxs[d]
         newy = j + dys[d]
@@ -31,7 +30,6 @@ def move(i, j):
             if cell_value > max_value:
                 max_value = cell_value
                 best_x, best_y = newx, newy
-                best_d = d
     next_marvels[best_x][best_y] += 1
 
 def handle_collisions():
