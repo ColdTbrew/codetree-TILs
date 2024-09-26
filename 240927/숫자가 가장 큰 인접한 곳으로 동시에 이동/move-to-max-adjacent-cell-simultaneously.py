@@ -6,9 +6,10 @@ next_marvels = []
 for _ in range(n):
     row = list(map(int, input().split()))
     mat.append(row)
-    empty_row = [0] * n
-    marvels.append(empty_row.copy())
-    next_marvels.append([0] * n)
+    
+# 각 행이 독립적인 리스트가 되도록 초기화
+marvels = [[0]*n for _ in range(n)]
+next_marvels = [[0]*n for _ in range(n)]
 
 for _ in range(m):
     i, j = list(map(int, input().split()))
