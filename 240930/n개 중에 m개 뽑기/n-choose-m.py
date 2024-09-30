@@ -13,5 +13,5 @@ def choose(cur_num, cnt):
     ans.pop()
 
     find_combination(cur_num+1, cnt)
-    
-choose(0)
+
+choose(1, 0)
