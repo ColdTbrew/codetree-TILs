@@ -1,17 +1,17 @@
 n, m = tuple(map(int, input().split()))
 ans = []
 
-def choose(cur_num):
-    if cur_num == m:
-        if ans == sorted(ans):
-            for x in ans:
-                print(x, end=" ")
+def choose(cur_num, cnt):
+    if cur_num == n+1:
+        if cnt== m:
+            for elem in ans:
+                print(elem , end = " ")
             print()
         return
-    for k in range(1, n+1):
-        if k not in ans:
-            ans.append(k)
-            choose(cur_num+1)
-            ans.pop()
+    ans.append(cur_num)
+    find_combination(cur_num+1, cnt+1)
+    ans.pop()
+
+    find_combination(cur_num+1, cnt)
     
 choose(0)
