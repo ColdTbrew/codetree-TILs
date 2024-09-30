@@ -25,8 +25,8 @@ def find_max(count):
     if count == n: #턴 끝
         return
     for i in range(k):
-        if pos[i] >= m:
-            continue
+        # if pos[i] >= m:
+        #     continue
         pos[i] += distances[count] #턴에 맞는 이동 거리더하기
         find_max(count+1)
         pos[i] -= distances[count] #백트레킹
