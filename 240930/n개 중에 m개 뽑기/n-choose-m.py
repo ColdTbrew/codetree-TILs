@@ -9,9 +9,9 @@ def choose(cur_num, cnt):
             print()
         return
     ans.append(cur_num)
-    find_combination(cur_num+1, cnt+1)
+    choose(cur_num+1, cnt+1)
     ans.pop()
 
-    find_combination(cur_num+1, cnt)
+    choose(cur_num+1, cnt)
 
 choose(1, 0)
