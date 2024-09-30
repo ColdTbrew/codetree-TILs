@@ -11,13 +11,8 @@ def choose(cur_num):
         return
     
     for kx in range(1, k+1):
-        if cur_num >= 3:
-            if ans[cur_num-2] == ans[cur_num-3] == kx:
-                pass
-            else:
-                ans.append(kx)
-                choose(cur_num+1)
-                ans.pop()
+        if len(ans) >= 2 and ans[-1] == ans[-2] == kx:
+            continue
         else:
             ans.append(kx)
             choose(cur_num+1)
