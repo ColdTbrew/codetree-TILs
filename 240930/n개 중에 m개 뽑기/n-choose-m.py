@@ -9,9 +9,9 @@ def choose(cur_num, cnt):
             print()
         return
     ans.append(cur_num)
-    choose(cur_num+1, cnt+1)
+    choose(cur_num+1, cnt+1) #컬넘 자리의 숫자를 사용한 경우, 선택을 하면 카운트를 올리고
     ans.pop()
 
-    choose(cur_num+1, cnt)
+    choose(cur_num+1, cnt) #컬넘 자리의 숫자를 사용하지 않았을때
 
 choose(1, 0)
