@@ -1,21 +1,25 @@
 n, m = tuple(map(int, input().split()))
 li = list(map(int, input().split()))
-
+visited = [False for _ in range(n)]
 max_res = 0
 
 ans = list()
-def choose(cur_num, start_idx):
+def choose(cur_num, cnt):
     global max_res
-    if cur_num == m:
-        a = 0  # XOR 초기값은 0이어야 함
-        for r in ans:
-            a ^= r
-        max_res = max(max_res, a)
+    if cnt == m: #3개를 골랏을때 xor의 최대값을 연산하고 max갱신
+        val = 0
+        for i in range(n):
+            if visited[i]:
+                val ^= li[i]
+        max_res = max(max_res, val)
         return
-    for i in range(start_idx, len(li)):  # start_idx를 이용하여 중복 선택 방지
-        ans.append(li[i])
-        choose(cur_num+1, i+1)  # i+1을 넘겨서 중복 선택을 방지
-        ans.pop()
+    if cur_num == n:
+        return
+    
+    choose(cur_num+1, cnt)
 
+    visited[cur_num] = True
+    choose(cur_num+1, cnt+1)
+    visited[cur_num] = False
 choose(0,0)
 print(max_res)
