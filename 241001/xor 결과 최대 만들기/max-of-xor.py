@@ -6,7 +6,7 @@ max_res = 0
 ans = list()
 def choose(cur_num):
     global max_res
-    if cur_num == n+1:
+    if cur_num == m+1:
         a = 0
         for r in ans:
             a ^= r
