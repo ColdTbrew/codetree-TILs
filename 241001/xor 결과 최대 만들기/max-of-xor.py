@@ -17,5 +17,5 @@ def choose(cur_num):
         choose(cur_num+1)
         ans.pop()
 
-choose(1)
+choose(0)
 print(max_res)
