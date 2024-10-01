@@ -7,7 +7,7 @@ ans = list()
 def choose(cur_num):
     global max_res
     if cur_num == n+1:
-        a = ans[0]
+        a = 0
         for r in ans:
             a ^= r
         max_res = max(max_res, a)
