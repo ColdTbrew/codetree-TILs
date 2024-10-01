@@ -17,5 +17,5 @@ def choose(cur_num, start_idx):
         choose(cur_num+1, i+1)  # i+1을 넘겨서 중복 선택을 방지
         ans.pop()
 
-choose(0)
+choose(0,0)
 print(max_res)
