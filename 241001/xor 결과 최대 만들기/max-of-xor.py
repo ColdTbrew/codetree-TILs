@@ -12,6 +12,8 @@ def choose(cur_num):
             a ^= r
         max_res = max(max_res, a)
         return
+    if cur_num > m:
+        return 
     for elem in li:
         ans.append(elem)
         choose(cur_num+1)
