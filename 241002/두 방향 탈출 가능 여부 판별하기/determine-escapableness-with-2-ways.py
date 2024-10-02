@@ -12,12 +12,12 @@ for _ in range(n):
 
 
 def cango(x, y):
-    return 0 <= x < n and 0 <= y < n and mat[x][y] == 1 and not visited[x][y]
+    return 0 <= x < n and 0 <= y < m and mat[x][y] == 1 and not visited[x][y]
 
 def dfs(x, y):
-    dx = [1, 0]
-    dyx = [0, 1]
-    for dx, dy in dxs, dys:
+    dxs = [1, 0]
+    dys = [0, 1]
+    for dx, dy in zip(dxs, dys):
         newx , newy = dx + x, dy+ y
         if cango(newx, newy):
             visited[newx][newy] = True
@@ -26,6 +26,7 @@ def dfs(x, y):
             dfs(newx, newy)
 
 
+dfs(0,0)
 if suc:
     print(1)
 else:
