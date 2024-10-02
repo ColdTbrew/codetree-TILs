@@ -19,13 +19,14 @@ def cango(x, y):
 
 def dfs(x, y):
     global people
+    people += 1
     dxs = [-1, 1, 0, 0]
     dys = [0, 0, -1, 1]
     for dx, dy in zip(dxs, dys):
         newx, newy = dx + x, dy+ y
         if cango(newx, newy):
             visited[newx][newy] = True
-            people += 1
+            
             dfs(newx, newy)
     
 
@@ -35,7 +36,7 @@ for i in range(n):
     for j in range(n):
         if visited[i][j] != True and mat[i][j] == 1:
             total_village_cnt += 1
-            people = 1
+            people = 0
             visited[i][i] = True
             dfs(i, j)
             populations.append(people)
