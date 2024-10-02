@@ -15,6 +15,7 @@ def cango(x, y):
     return 0 <= x < n and 0 <= y < m and mat[x][y] == 1 and not visited[x][y]
 
 def dfs(x, y):
+    global suc
     dxs = [1, 0]
     dys = [0, 1]
     for dx, dy in zip(dxs, dys):
