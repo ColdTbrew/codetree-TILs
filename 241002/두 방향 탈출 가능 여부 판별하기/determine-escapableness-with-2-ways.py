@@ -4,7 +4,7 @@ n, m = tuple(map(int, input().split()))
 start = (0,0)
 end = (n-1,m-1)
 suc = False
-visited = [False*m for _ in range(n)]
+visited = [[False]*m for _ in range(n)]
 mat = []
 for _ in range(n):
     row = list(map(int, input().split()))
