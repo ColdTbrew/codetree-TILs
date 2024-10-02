@@ -2,7 +2,7 @@
 # 1인 곳만 갈 수 있음
 n, m = tuple(map(int, input().split()))
 start = (0,0)
-end = (n,m)
+end = (n-1,m-1)
 suc = False
 mat = []
 for _ in range(n):
