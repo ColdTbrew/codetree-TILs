@@ -36,6 +36,7 @@ for i in range(n):
         if visited[i][j] != True and mat[i][j] == 1:
             total_village_cnt += 1
             people = 1
+            visited[i][i] = True
             dfs(i, j)
             populations.append(people)
 
