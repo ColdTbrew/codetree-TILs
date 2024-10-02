@@ -18,7 +18,7 @@ def dfs(node):
             #print(cur_node)
             visited[cur_node] = True
             # if cur_node != 1:
-            #     count += 1
+            count += 1
             dfs(cur_node)
 
 
