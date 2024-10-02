@@ -35,8 +35,10 @@ def bfs():
 
 
 for x, y in starting_pos:
-    visited[x-1][y-1] = True
-    q.append((x-1, y-1))
-    bfs()
+    if not visited[x][y]:
+        visited[x][y] = True
+        q.append((x, y))
+        total += 1
+        bfs()
 
 print(total)
