@@ -17,8 +17,8 @@ def dfs(node):
         if visited[cur_node] != True and mat[node][cur_node]:
             #print(cur_node)
             visited[cur_node] = True
-            if cur_node != 1:
-                count += 1
+            # if cur_node != 1:
+            #     count += 1
             dfs(cur_node)
 
 
@@ -27,5 +27,6 @@ def dfs(node):
 #     for j in range(n):
 #         print(mat[i][j], end = " ")
 #     print()
+visited[1] = True
 dfs(1)
 print(count)
