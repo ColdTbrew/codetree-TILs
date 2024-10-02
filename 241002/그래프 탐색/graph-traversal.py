@@ -3,7 +3,7 @@
 #노드개수만큼의 배열에 번호를 적어놔야함
 
 n, m = tuple(map(int, input().split()))
-mat = [[0 for _ in range(n+1)] for _ in range(n+!)]
+mat = [[0 for _ in range(n+1)] for _ in range(n+1)]
 visited = [False for _ in range(n+1)]
 for i in range(m):
     x, y = tuple(map(int, input().split()))
