@@ -13,13 +13,13 @@ visited = [[False]* n for _ in range(n)]
 starting_pos = []
 for _ in range(k):
     x, y = list(map(int, input().split()))
-    starting_pos.append((x,y))
+    starting_pos.append((x-1,y-1))
 
 def cango(x, y):
     return 0<=x < n and 0<= y < n and mat[x][y] == 0 and not visited[x][y]
 
 q = deque()
-total = 1
+total = 0
 def bfs():
     global total
     dxs, dys = [-1, 1, 0, 0] , [0, 0, -1, 1]
@@ -35,8 +35,8 @@ def bfs():
 
 
 for x, y in starting_pos:
-    visited[x][y] = True
-    q.append((x, y))
+    visited[x-1][y-1] = True
+    q.append((x-1, y-1))
     bfs()
 
 print(total)
