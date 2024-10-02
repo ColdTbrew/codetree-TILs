@@ -33,7 +33,7 @@ def dfs(x, y):
 
 for i in range(n):
     for j in range(n):
-        if visited[i][j] != True and mat[i][j] == 1:
+        if visited[i][j] !=True and mat[i][j] == 1:
             total_village_cnt += 1
             people = 1
             visited[i][i] = True
