@@ -6,7 +6,7 @@ mat = []
 for _ in range(n):
     row = list(map(int, input().split()))
     mat.append(row)
-visited = [[0]*n for _ in range(n)]
+visited = [[False]*n for _ in range(n)]
 total_village_cnt = 0
 populations = []
 
