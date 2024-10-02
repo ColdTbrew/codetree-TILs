@@ -20,13 +20,12 @@ def cango(x, y):
 def dfs(x, y):
     global people
     people += 1
+    visited[newx][newy] = True
     dxs = [-1, 1, 0, 0]
     dys = [0, 0, -1, 1]
     for dx, dy in zip(dxs, dys):
         newx, newy = dx + x, dy+ y
         if cango(newx, newy):
-            visited[newx][newy] = True
-            
             dfs(newx, newy)
     
 
