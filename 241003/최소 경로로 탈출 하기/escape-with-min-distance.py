@@ -10,7 +10,7 @@ visited = [[False] * m for _ in range(n)]
 step = [[0] * m for _ in range(n)]
 
 def cango(x, y):
-    return 0<=x<n and 0<=y<n and mat[x][y]== 1 and not visited[x][y]
+    return 0<=x<n and 0<=y<m and mat[x][y]== 1 and not visited[x][y]
 
 end = (n-1, m-1)
 q = deque()
