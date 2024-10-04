@@ -1,7 +1,7 @@
 n = int(input())
 
 # topdown 메모이제이션
-memo = [-1 for _ in range(n)]
+memo = [-1 for _ in range(n+1)]
 def fibo(x):
     if memo[x] != -1:
         return memo[x]
@@ -11,4 +11,4 @@ def fibo(x):
         memo[x] = fibo(x-1)+fibo(x-2)
     return memo[x]
 
-print(fibo(n-1))
+print(fibo(n))
