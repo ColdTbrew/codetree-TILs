@@ -19,7 +19,7 @@ def cango(x, y):
 def bfs():
     while q:
         curx, cury = q.popleft()
-        if (x, y)== start:
+        if (curx, cury)== start:
             return True
         for dx, dy in directions:
             x = dx+curx
