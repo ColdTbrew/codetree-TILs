@@ -15,8 +15,11 @@ memo = [-1 for _ in range(n+1)]
 
 # bottom up tabulation
 f = [-1 for _ in range(n+1)]
-f[1] = 1
-f[2] = 1
-for i in range(3, n+1):
-    f[i] = f[i-1]+f[i-2]
-print(f[n])
+if n<= 2:
+    print(1)
+else:
+    f[1] = 1
+    f[2] = 1
+    for i in range(3, n+1):
+        f[i] = f[i-1]+f[i-2]
+    print(f[n])
