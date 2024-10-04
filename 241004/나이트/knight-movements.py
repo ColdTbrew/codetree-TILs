@@ -4,8 +4,8 @@ directions = [
 ]
 n = int(input())
 pos = list(map(int, input().split()))
-start = (pos[0], pos[1])
-end = (pos[2], pos[3])
+start = (pos[0]-1, pos[1]-1)
+end = (pos[2]-1, pos[3]-1)
 
 visited = [[False] * n for _ in range(n)]
 step = [[0] * n for _ in range(n)]
