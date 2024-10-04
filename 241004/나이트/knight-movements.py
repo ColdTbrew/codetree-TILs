@@ -26,7 +26,7 @@ def bfs():
                 visited[x][y] = True
                 step[x][y] = step[curx][cury] + 1
                 q.append((x, y))
-                if (x,y) == end:
+                if (x,y) == end or (x, y)== start:
                     return True
     return False
 
