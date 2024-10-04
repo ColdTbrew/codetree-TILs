@@ -19,8 +19,6 @@ def cango(x, y):
 def bfs():
     while q:
         curx, cury = q.popleft()
-        if (curx, cury)== start:
-            return True
         for dx, dy in directions:
             x = dx+curx
             y = dy + cury
@@ -38,5 +36,7 @@ visited[start[0]][start[1]] = True
 
 if bfs():
     print(step[end[0]][end[1]])
+elif start == end:
+    print(0)
 else:
     print(-1)
