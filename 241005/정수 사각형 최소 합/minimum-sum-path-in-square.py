@@ -10,10 +10,13 @@ dp = [[0]*n for _ in range(n)]
 # 시작점 초기화 (1, N) -> (0, n-1)
 dp[0][n-1] = mat[0][n-1]
 
-# 첫 번째 행과 마지막 열 초기화
+# 첫 번째 행 초기화 (오른쪽에서 왼쪽으로 이동)
 for i in range(n-2, -1, -1):
     dp[0][i] = dp[0][i+1] + mat[0][i]  # 첫 번째 행
-    dp[i][n-1] = dp[i+1][n-1] + mat[i][n-1]  # 마지막 열
+
+# 첫 번째 열 초기화 (아래쪽으로 이동)
+for i in range(1, n):
+    dp[i][n-1] = dp[i-1][n-1] + mat[i][n-1]  # 마지막 열
 
 # DP 테이블 채우기
 for i in range(1, n):
