@@ -12,5 +12,7 @@ for i in range(1, m+1):
             dp[i] = min(dp[i] , dp[i-coin[j]]+ 1)
 
 
-
-print(dp[m])
+if dp[m] == 10000:
+    print(-1)
+else:
+    print(dp[m])
