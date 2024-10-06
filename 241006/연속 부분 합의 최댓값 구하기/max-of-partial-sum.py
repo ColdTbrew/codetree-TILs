@@ -4,7 +4,7 @@
 
 n = int(input())
 mat = list(map(int, input().split()))
-dp = [-1001]*n
+dp = [-1001]*n #dp는 n의 개수만큼 있으면됨
 dp[0] = mat[0]
 for i in range(1, n):
     dp[i] = max(dp[i-1] + mat[i], mat[i])
