@@ -9,4 +9,4 @@ dp[0] = mat[0]
 for i in range(1, n):
     dp[i] = max(dp[i-1] + mat[i], mat[i])
 
-print(dp[n])
+print(max(dp))
