@@ -4,9 +4,9 @@
 
 n = int(input())
 mat = list(map(int, input().split()))
-dp = [-1001]*(n+1)
+dp = [-1001]*n
 dp[0] = mat[0]
-for i in range(1, n+1):
-    dp[i] = max(dp[i-1] + mat[i-1], mat[i-1])
+for i in range(1, n):
+    dp[i] = max(dp[i-1] + mat[i], mat[i])
 
 print(dp[n])
