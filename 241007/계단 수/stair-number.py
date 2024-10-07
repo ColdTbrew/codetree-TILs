@@ -10,6 +10,6 @@ for length in range(2, n+1):
             dp[length][digit] += dp[length-1][digit-1]
         if digit < 9:
             dp[length][digit] += dp[length-1][digit+1]
-        dp[length][digit] %= 100000007
+        dp[length][digit] %= (10**9 + 7)
 
-print(sum(dp[n]) %100000007)
+print(sum(dp[n]) %(10**9 + 7))
