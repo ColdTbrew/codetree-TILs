@@ -1,4 +1,4 @@
-original = input()  # 사용자 입력
+original = input().strip()  # 입력받은 문자열의 앞뒤 공백 및 줄바꿈 문자 제거
 s = list(original)  # 입력된 문자열을 리스트로 변환
 summ = 0  # 합계를 저장할 변수 초기화
 
