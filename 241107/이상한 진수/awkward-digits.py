@@ -1,29 +1,28 @@
-def is_one_bit_diff(x, y):
-    """ 두 숫자 x와 y가 이진수에서 한 비트만 다른지 확인 """
-    return bin(x ^ y).count('1') == 1
-
 # 입력 받기
-a = input().strip()  # 2진법 입력
-b = input().strip()  # 3진법 입력
+a = input().strip()
+b = input().strip()
 
-# a와 b의 길이를 고려하여 최대 N을 설정합니다.
-max_value = 1_000_000_000
+# a로부터 가능한 N 생성 (2진수)
+possible_from_a = []
+for i in range(len(a)):
+    # 현재 비트를 반전
+    flipped_bit = '1' if a[i] == '0' else '0'
+    # 새로운 이진수 문자열 생성
+    new_a = a[:i] + flipped_bit + a[i+1:]
+    # 정수로 변환하여 리스트에 추가
+    possible_from_a.append(int(new_a, 2))
 
-# 가능한 N을 찾기 위해 0부터 max_value까지 검사
-for N in range(max_value + 1):
-    # N을 2진법과 3진법으로 변환
-    binary_N = bin(N)[2:]  # 2진법 문자열 (앞의 '0b' 제거)
-    ternary_N = ''
-    
-    temp = N
-    while temp > 0:
-        ternary_N = str(temp % 3) + ternary_N
-        temp //= 3
-    if not ternary_N:  # N이 0일 경우
-        ternary_N = '0'
-    
-    # 2진법과 3진법에서 각각 a, b와 정확히 한 비트만 다르면
-    if len(binary_N) == len(a) and len(ternary_N) == len(b):
-        if is_one_bit_diff(int(binary_N, 2), int(a, 2)) and is_one_bit_diff(int(ternary_N, 3), int(b, 3)):
-            print(N)
-            break  # 유효한 N을 찾으면 종료
+# b로부터 가능한 N 생성 (3진수)
+possible_from_b = []
+for i in range(len(b)):
+    # 현재 자리의 숫자를 제외한 나머지 두 숫자로 변경
+    for digit in '012':
+        if b[i] != digit:
+            new_b = b[:i] + digit + b[i+1:]
+            possible_from_b.append(int(new_b, 3))
+
+# 가능한 N들의 교집합 찾기
+possible_N = set(possible_from_a) & set(possible_from_b)
+
+# 결과 출력
+print(possible_N.pop())
